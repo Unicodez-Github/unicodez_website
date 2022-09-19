@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Flags Icon Usage: <a href="https://icons8.com/icon/15532/usa">USA icon by Icons8</a>
+
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+        @apply max-w-7xl mx-auto px-4 sm:px-12 2xl:px-6;
+    }
+}
+
+@layer components {
+    .button {
+        @apply font-medium whitespace-nowrap rounded transition;
+
+        &.primary {
+            @apply text-white bg-unicodez-blue hover:bg-opacity-90;
+        }
+
+        &.dark {
+            @apply text-white bg-unicodez-blueDark hover:bg-opacity-95;
+        }
+
+        &.white {
+            @apply text-unicodez-dark bg-white hover:bg-opacity-95;
+        }
+
+        &.orange {
+            @apply text-white bg-[#F29100] hover:bg-opacity-95;
+        }
+
+        &.normal {
+            @apply py-4 px-8;
+        }
+    }
+
+    .section-title {
+        @apply text-3xl md:text-5xl font-bold leading-snug;
+    }
+
+    .animated-cursor::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background-color: #000;
+        animation: cursor 0.6s linear infinite alternate;
+        will-change: opacity;
+    }
+
+    @keyframes cursor {
+
+        0%,
+        40% {
+            opacity: 1;
+        }
+
+        60%,
+        100% {
+            opacity: 0;
+        }
+    }
+}

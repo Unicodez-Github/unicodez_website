@@ -4,9 +4,10 @@ export default function ContactForm() {
   return (
     <section className="w-full py-24" data-aod="fade-up">
       <div className="container">
-        {/* <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12">
           <div className="bg-[#FFF2CD] p-10 rounded-3xl">
-            <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md">
+             <Script src="https://forms.marketing360.com/load.js?id=60ba8ca707fa9323886a8fa6" />
+            {/* <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md">
               Leave us a little info, and we&lsquo;ll be in touch.
             </h2>
             <div className="space-y-10 mt-16">
@@ -32,8 +33,8 @@ export default function ContactForm() {
               />
               <div className="mb-10">
                 <button className="button primary normal">Submit</button>
-              </div>
-            </div>
+              </div> */}
+
           </div>
           <div className="bg-[#D1E6EB] p-10 rounded-3xl">
             <h2 className="section-title font-medium text-lg lg:text-3xl leading-snug max-w-md">
@@ -84,10 +85,7 @@ export default function ContactForm() {
               </div>
             </div>
           </div>
-        </div> */}
-
-    <Script src="https://forms.marketing360.com/load.js?id=60ba8ca707fa9323886a8fa6" />
-
+        </div>
       </div>
     </section>
   );

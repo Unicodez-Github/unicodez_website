@@ -19,7 +19,7 @@ const team = [
       "Anmol Shrivastava holds a Master's Degree in Computer Applications and has many years of experience in the IT industry. Her skills and experience make her a superb COO & Co-Founder. ",
     email: "info@unicodez.com",
     linkedin: "#",
-    picture: "/images/team/anmol.png",
+    picture: "/images/team/anmolf.png",
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ export default function TeamGrid() {
                   {item.name}
                 </h3>
                 <p className="text-2xl font-semibold mt-4">{item.role}</p>
-                <p className="mt-10 max-w-md leading-10">{item.quote}</p>
+                <p className="mt-10 max-w-md leading-10 z">{item.quote}</p>
                 <div className="absolute -bottom-10 lg:bottom-0 w-full">
                   <div className="w-full h-full flex justify-between relative">
                     <div className="flex flex-col h-full items-end">

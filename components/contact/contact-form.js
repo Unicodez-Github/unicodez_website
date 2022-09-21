@@ -1,40 +1,104 @@
-import Script from "next/script";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactForm() {
+  const [form, setform] = useState({ from_name: '', from_email: '', from_phone: '', from_message: '' });
+  const formHandler = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setform(prevState => ({
+      ...prevState,
+      [name]: value
+    })
+    )
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const { from_name, from_email, from_contact, from_message } = form;
+    if (from_name == '' || from_email == '' || from_contact == '' || from_message == '') {
+      console.log('here');
+      toast.error("Please fill all details !", {
+        position: toast.POSITION.BOTTOM_LEFT,
+        autoClose: 3000,
+      });
+    } else {
+      console.log(from_name, from_email, from_contact, from_message);
+      const params = {
+        send_to: 'unicodezgithub@gmail.com',
+        from_name,
+        from_email,
+        from_contact,
+        from_message
+      }
+
+      emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
+        .then((response) => {
+          toast.success("Your query is registered !", {
+            position: toast.POSITION.BOTTOM_LEFT,
+            autoClose: 3000,
+          });
+        }, (err) => {
+          toast.error("Please try after sometime!", {
+            position: toast.POSITION.BOTTOM_LEFT,
+            autoClose: 3000,
+          });
+        });
+    }
+  }
+
+
+
   return (
     <section className="w-full py-24" data-aod="fade-up">
+      <ToastContainer />
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="bg-[#FFF2CD] p-10 rounded-3xl">
-             <Script src="https://forms.marketing360.com/load.js?id=60ba8ca707fa9323886a8fa6" />
-            {/* <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md">
+            <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md">
               Leave us a little info, and we&lsquo;ll be in touch.
             </h2>
-            <div className="space-y-10 mt-16">
-              <input
-                type="text"
-                className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
-                placeholder="Enter Your Name"
-              />
-              <input
-                type="text"
-                className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
-                placeholder="Enter Your Email"
-              />
-              <input
-                type="text"
-                className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
-                placeholder="Enter Your Phone Number"
-              />
-              <textarea
-                rows={10}
-                className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 resize-none"
-                placeholder="How can we help?"
-              />
-              <div className="mb-10">
-                <button className="button primary normal">Submit</button>
-              </div> */}
-
+            <form>
+              <div className="space-y-10 mt-16">
+                <input
+                  type="text"
+                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
+                  placeholder="Enter Your Name"
+                  name="from_name"
+                  required
+                  onChange={formHandler}
+                />
+                <input
+                  type="email"
+                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
+                  placeholder="Enter Your Email"
+                  required
+                  name="from_email"
+                  onChange={formHandler}
+                />
+                <input
+                  type="number"
+                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
+                  placeholder="Enter Your Phone Number"
+                  name="from_contact"
+                  required
+                  onChange={formHandler}
+                />
+                <textarea
+                  rows={10}
+                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 resize-none"
+                  placeholder="How can we help?"
+                  name="from_message"
+                  required
+                  onChange={formHandler}
+                />
+                <div className="mb-10">
+                  <button className="button primary normal" onClick={submitHandler}>Submit</button>
+                </div>
+              </div>
+            </form>
           </div>
           <div className="bg-[#D1E6EB] p-10 rounded-3xl">
             <h2 className="section-title font-medium text-lg lg:text-3xl leading-snug max-w-md">

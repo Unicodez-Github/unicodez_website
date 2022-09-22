@@ -25,9 +25,7 @@ export default function ContactForm() {
         autoClose: 3000,
       });
     } else {
-      console.log(from_name, from_email, from_contact, from_message);
       const params = {
-        send_to: 'unicodezgithub@gmail.com',
         from_name,
         from_email,
         from_contact,
@@ -40,6 +38,7 @@ export default function ContactForm() {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 3000,
           });
+          console.log(res);
         }, (err) => {
           toast.error("Please try after sometime!", {
             position: toast.POSITION.BOTTOM_LEFT,
@@ -71,14 +70,6 @@ export default function ContactForm() {
                   onChange={formHandler}
                 />
                 <input
-                  type="email"
-                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
-                  placeholder="Enter Your Email"
-                  required
-                  name="from_email"
-                  onChange={formHandler}
-                />
-                <input
                   type="number"
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
                   placeholder="Enter Your Phone Number"
@@ -86,6 +77,15 @@ export default function ContactForm() {
                   required
                   onChange={formHandler}
                 />
+                <input
+                  type="email"
+                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
+                  placeholder="email@gmail.com"
+                  required
+                  name="from_email"
+                  onChange={formHandler}
+                />
+
                 <textarea
                   rows={10}
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 resize-none"

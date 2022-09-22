@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactForm() {
-  const [form, setform] = useState({ from_name: '', from_email: '', from_phone: '', from_message: '' });
+  const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
   const formHandler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;

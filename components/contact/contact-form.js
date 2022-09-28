@@ -1,10 +1,13 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import Router from "next/router";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Link from "next/link";
 
 export default function ContactForm() {
   const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
+  const [flag, setflag] = useState(false);
   const formHandler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -17,6 +20,7 @@ export default function ContactForm() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    <Link href="/thankyou"><a></a></Link>
     const { from_name, from_email, from_contact, from_message } = form;
     if (from_name == '' || from_email == '' || from_contact == '' || from_message == '') {
       console.log('here');
@@ -31,14 +35,14 @@ export default function ContactForm() {
         from_contact,
         from_message
       }
-
       emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
         .then((response) => {
           toast.success("Your query is registered !", {
             position: toast.POSITION.BOTTOM_LEFT,
             autoClose: 3000,
           });
-          console.log(res);
+          setflag(true);
+          Router.push("/thankyou");
         }, (err) => {
           toast.error("Please try after sometime!", {
             position: toast.POSITION.BOTTOM_LEFT,
@@ -47,9 +51,6 @@ export default function ContactForm() {
         });
     }
   }
-
-
-
   return (
     <section className="w-full py-24" data-aod="fade-up">
       <ToastContainer />
@@ -63,7 +64,7 @@ export default function ContactForm() {
               <div className="space-y-10 mt-16">
                 <input
                   type="text"
-                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
+                  className="w-full border p-4 outline-none appearance-none rounded bg-white text-unicodez-dark text-base py-4 px-7"
                   placeholder="Enter Your Name"
                   name="from_name"
                   required
@@ -75,6 +76,7 @@ export default function ContactForm() {
                   placeholder="Enter Your Phone Number"
                   name="from_contact"
                   required
+                  inputMode="numeric"
                   onChange={formHandler}
                 />
                 <input

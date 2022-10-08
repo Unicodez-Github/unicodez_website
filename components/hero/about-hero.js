@@ -25,7 +25,7 @@ const AboutHero = () => {
         <Navbar />
         <main className="container -mt-40">
           <div className="grid lg:grid-cols-2">
-            <div className="text-left pt-72">
+            <div className="text-left pt-48 lg:pt-72">
               <div className="inline-flex">
                 <div className="text-white bg-[#EC4699] py-1 px-5 rounded-r-[24px] rounded-tl-[24px]">
                   <span className="leading-10 text-base font-medium uppercase">
@@ -33,7 +33,7 @@ const AboutHero = () => {
                   </span>
                 </div>
               </div>
-              <h1 className="text-4xl tracking-tight sm:leading-relaxed md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-6xl mt-5">
+              <h1 className="text-4xl tracking-tight leading-snug md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-6xl mt-5">
                 <span className="block">Who Are We?</span>
               </h1>
               <p className="mt-5 max-w-md text-base font-medium text-unicodez-dark sm:text-lg md:mt-5 md:text-xl md:max-w-lg leading-8 sm:md:leading-10">
@@ -42,9 +42,9 @@ const AboutHero = () => {
                 solutions to the most complex problems.
               </p>
               <div className="mt-5 max-w-md sm:flex justify-center sm:justify-start md:mt-8">
-                <div className="rounded-md shadow">
+                <div className="rounded-md max-w-xs">
                   <Link href={"#beliefs"}>
-                    <span className="w-full flex items-center justify-center px-8 py-2 border border-transparent text-base font-medium rounded-md text-white bg-unicodez-blue hover:bg-opacity-90 md:py-4 md:px-14 cursor-pointer">
+                    <span className="md:w-full inline-flex items-center justify-start md:justify-center px-8 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-unicodez-blue hover:bg-opacity-90 md:py-4 md:px-14 shadow cursor-pointer">
                       <span>Read More</span>
                       <svg
                         width="16"

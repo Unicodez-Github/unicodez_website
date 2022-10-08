@@ -18,8 +18,8 @@ const ProductsHero = () => {
         <Navbar />
         <main className="container -mt-40">
           <div className="grid lg:grid-cols-2">
-            <div className="text-left pt-72">
-              <h1 className="text-4xl tracking-tight sm:leading-relaxed md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-6xl mt-5">
+            <div className="text-left pt-48 lg:pt-72">
+              <h1 className="text-4xl tracking-tight leading-snug md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-6xl mt-5">
                 <span className="block">
                   If You Can Dream It, We Can Bring It To Life
                 </span>
@@ -30,9 +30,9 @@ const ProductsHero = () => {
                 bank. We fully adhere to deadlines and timeframes.
               </p>
               <div className="mt-5 max-w-md sm:flex justify-center sm:justify-start md:mt-8">
-                <div className="rounded-md shadow">
+                <div className="rounded-md max-w-xs">
                   <Link href={"#products"}>
-                    <span className="w-full flex items-center justify-center px-8 py-2 border border-transparent text-base font-medium rounded-md text-white bg-unicodez-blue hover:bg-opacity-90 md:py-4 md:px-14 cursor-pointer">
+                    <span className="md:w-full inline-flex items-center justify-start md:justify-center px-8 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-unicodez-blue hover:bg-opacity-90 md:py-4 md:px-14 shadow cursor-pointer">
                       <span>Learn More</span>
                       <svg
                         width="16"

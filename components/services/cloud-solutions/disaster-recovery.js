@@ -17,12 +17,13 @@ export default function DisasterRecovery() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Disaster Recovery</h2>
+            <h2 className="section-title leading-snug">Disaster Recovery</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Keep your business’s information safe with our disaster recovery
-              cloud computing services. Easily and quickly accessed cloud-based
-              managed service that helps you quickly recover your business’
-              critical systems after a disaster such as a database wipe.
+              cloud computing services. Easily and quickly access your
+              cloud-based management service and cloud backup to quickly recover
+              your business’ critical systems after a disaster such as a
+              database wipe.
             </p>
             <div className="inline-flex mt-10">
               <button className="button primary normal text-center !px-16">

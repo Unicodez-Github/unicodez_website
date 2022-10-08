@@ -5,10 +5,9 @@ export default function SpeedyTransactions() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Speedy And Efficient Transactions</h2>
+            <h2 className="section-title leading-snug">Speedy And Efficient Transactions</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              Blockchain system processes transactions incredibly fast.
-              Incorporate to increase the capacity of your network.
+            Blockchain system processes transactions incredibly fast. Incorporate our help to increase the capacity of your network.
             </p>
           </div>
           <div>

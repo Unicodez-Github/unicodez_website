@@ -17,7 +17,7 @@ export default function Database() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Database</h2>
+            <h2 className="section-title leading-snug">Database</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Meetchess’ database allows coaches to save records and scores
               which are entered into the student’s report. Coaches and students

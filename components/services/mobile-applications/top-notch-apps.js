@@ -5,7 +5,7 @@ export default function TopNotchApps() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Top-Notch Apps</h2>
+            <h2 className="section-title leading-snug">Top-Notch Apps</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               High-performing apps with user-friendly interfaces, intuitive UX,
               and unique features designed specifically for your business and

@@ -11,15 +11,18 @@ export default function ProductionSupportBrief() {
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Production support and maintenance services are aimed to ensure
               that applications are highly available, reliable, and relevant to
-              evolving business needs. Since 2010, Unicodez delivers full-range
-              support and maintenance services for applications of different
-              types and complexity.
+              evolving business needs. Since 2010, Unicodez has delivered
+              full-range support and maintenance services for applications of
+              different types and complexity. When it comes to product planning,
+              we are here to help you succeed.
             </p>
           </div>
           <div>
             <div className="w-full h-full relative lg:-mt-12">
               <Image
-                src={"/images/services/optimized-support-maintenance-solutions.png"}
+                src={
+                  "/images/services/optimized-support-maintenance-solutions.png"
+                }
                 alt=" Optimized Support & Maintenance Solutions"
                 layout="responsive"
                 objectFit="contain"

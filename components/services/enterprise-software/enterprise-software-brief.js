@@ -4,7 +4,7 @@ export default function EnterpriseSoftwareBrief() {
       <div className="container">
         <div className="w-full">
           <p className="mt-10 text-unicodez-text text-lg text-center leading-[40px]">
-            Just how efficient are your business’ processes? Inefficient,
+            Just how efficient are your business’s processes? Inefficient,
             unnecessarily complex, and time-consuming business processes and
             operations are some of the major reasons that businesses lose money.
             At Unicodez, we create, deploy, and maintain software enterprise

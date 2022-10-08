@@ -5,7 +5,9 @@ export default function AutomateBusiness() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Automate Your Business</h2>
+            <h2 className="section-title leading-snug">
+              Automate Your Business
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Do you still have physical records or carry out your billing,
               accounting, and other business processes manually? Automating your

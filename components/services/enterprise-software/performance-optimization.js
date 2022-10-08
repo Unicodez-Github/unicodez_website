@@ -5,7 +5,9 @@ export default function PerformanceOptimization() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="lg:mt-10">
-            <h2 className="section-title">Performance Optimization</h2>
+            <h2 className="section-title leading-snug">
+              Performance Optimization
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Integrate software designed to ensure that you get the most out of
               all your resources. Maximize your profits.

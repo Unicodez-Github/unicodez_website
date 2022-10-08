@@ -65,11 +65,11 @@ const scaleFeatures = [
   },
   {
     id: 2,
-    title: "Software integration",
+    title: "Software Integration",
   },
   {
     id: 3,
-    title: "Legacy application Modernization",
+    title: "Legacy Application Modernization",
   },
   {
     id: 4,

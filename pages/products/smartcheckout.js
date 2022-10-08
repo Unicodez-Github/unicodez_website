@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import Newsletter from "../../components/core/newsletter";
-import BringYourSoftwareIdeas from "../../components/services/custom-solutions/bring-your-software-ideas";
+import BringYourSoftwareIdeas from "../../components/services/custom-software/bring-your-software-ideas";
 import WhyUnicodezProducts from "../../components/products/why-unicodez-products";
 import ProductsCta from "../../components/services/products-cta";
 import SmartcheckoutHero from "../../components/hero/smart-checkout-hero";

@@ -12,7 +12,7 @@ export default function UnistackBrief() {
         </div>
         <div className="grid lg:grid-cols-2 gap-6 mt-36">
           <div>
-            <h2 className="section-title">Create An App Through A Form</h2>
+            <h2 className="section-title leading-snug">Create An App Through A Form</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Create customized forms according to your business’ needs. You can
               create and manage a database for each app and even have separate

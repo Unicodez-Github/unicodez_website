@@ -5,11 +5,11 @@ export default function CloudMigration() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Cloud Migration</h2>
+            <h2 className="section-title leading-snug">Cloud Migration</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              Efficient, fast, and seamless move of data center capabilities to
-              a secure cloud. Enjoy reduced costs and simplify your company’s
-              IT.
+              Efficient, fast, and seamless movement of data center capabilities
+              to a secure cloud. Enjoy reduced costs and simplify your company’s
+              IT with a secure cloud.
             </p>
           </div>
           <div>

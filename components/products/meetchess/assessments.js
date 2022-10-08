@@ -5,7 +5,7 @@ export default function Assessments() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="lg:mt-10">
-            <h2 className="section-title">Assessments</h2>
+            <h2 className="section-title leading-snug">Assessments</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Meetchess platform has inbuilt and customizable quizzes,
               tournaments, SIMUL, and daily lessons or puzzles that coaches can

@@ -17,7 +17,7 @@ export default function AutomatedPayroll() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Automate Your Payroll</h2>
+            <h2 className="section-title leading-snug">Automate Your Payroll</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Payday doesn’t have to tire you out. Automate your payroll system
               and even sync it with our attendance management feature. Spend

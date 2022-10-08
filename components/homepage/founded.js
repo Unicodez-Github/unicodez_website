@@ -35,7 +35,7 @@ export default function Founded() {
                 />
               </svg>
             </div>
-            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 px-6 py-2 my-2">
+            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 md:px-6 py-2 my-2">
               <h3 className="text-unicodez-text text-sm lg:text-xl font-medium mt-6">
                 Founded in 2019
               </h3>
@@ -63,7 +63,7 @@ export default function Founded() {
                 />
               </svg>
             </div>
-            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 px-6 py-2 my-2">
+            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 md:px-6 py-2 my-2">
               <h3 className="text-unicodez-text text-sm lg:text-xl font-medium mt-6">
                 Awarded by Beststartup.us in the state of Delaware.
               </h3>
@@ -86,7 +86,7 @@ export default function Founded() {
                 />
               </svg>
             </div>
-            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 px-6 py-2 my-2">
+            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 md:px-6 py-2 my-2">
               <h3 className="text-unicodez-text text-sm lg:text-xl font-medium mt-6">
                 CMMI level – 3 company
               </h3>
@@ -109,7 +109,7 @@ export default function Founded() {
                 />
               </svg>
             </div>
-            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 px-6 py-2 my-2">
+            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 md:px-6 py-2 my-2">
               <h3 className="text-unicodez-text text-sm lg:text-xl font-medium mt-6">
                 ISO 9001:2015 certified
               </h3>
@@ -132,7 +132,7 @@ export default function Founded() {
                 />
               </svg>
             </div>
-            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 px-6 py-2 my-2">
+            <div className="order-1 border-b border-dashed border-opacity-20 border-unicodez-dark w-5/12 md:px-6 py-2 my-2">
               <h3 className="text-unicodez-text text-sm lg:text-xl font-medium mt-6">
                 Recognized as Startup ninja in 2022
               </h3>

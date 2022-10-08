@@ -3,7 +3,7 @@ import Head from "next/head";
 import Newsletter from "../../components/core/newsletter";
 import ServicesCta from "../../components/services/services-cta";
 import WhyChooseUs from "../../components/services/why-choose-us";
-import BringYourSoftwareIdeas from "../../components/services/custom-solutions/bring-your-software-ideas";
+import BringYourSoftwareIdeas from "../../components/services/custom-software/bring-your-software-ideas";
 import GetStartedServices from "../../components/services/get-started-services";
 import EnterpriseSoftwareHero from "../../components/hero/enterprise-software-hero";
 import EnterpriseSoftwareBrief from "../../components/services/enterprise-software/enterprise-software-brief";
@@ -12,12 +12,15 @@ import AutomateBusiness from "../../components/services/enterprise-software/auto
 import InformationSecurity from "../../components/services/enterprise-software/information-security";
 import PerformanceOptimization from "../../components/services/enterprise-software/performance-optimization";
 import CrmErp from "../../components/services/enterprise-software/crm-erp";
+import ErpSoftware from "../../components/services/enterprise-software/erp-software";
 
 export default function EnterpriseSoftware() {
   return (
     <Fragment>
       <Head>
-        <title>Enterprise Software Solutions :: Unicodez - Starts with you!</title>
+        <title>Enterprise Resource Planning Software | CRM & ERP</title>
+        <meta name="description" content="At Unicodez, we develop enterprise applications to transform your various business processes into a connective solution. Learn about enterprise software solutions here."/>
+        <meta name="keywords" content="ERP software developer, ERP consultant" />
       </Head>
       <EnterpriseSoftwareHero />
       <EnterpriseSoftwareBrief />
@@ -26,6 +29,7 @@ export default function EnterpriseSoftware() {
       <InformationSecurity />
       <PerformanceOptimization />
       <CrmErp />
+      <ErpSoftware />
       <WhyChooseUs />
       {/* <BringYourSoftwareIdeas /> */}
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo from "../core/logo";
 
 const services = [
-  { id: 0, title: "Custom Software Development", href: "/services/custom-solutions" },
+  { id: 0, title: "Custom Software Development", href: "/services/custom-software" },
   { id: 1, title: "Enterprise Software Development", href: "/services/enterprise-software" },
   { id: 2, title: "Mobile Application Development", href: "/services/mobile-applications" },
   { id: 3, title: "Cloud Software Solutions", href: "/services/cloud-solutions" },

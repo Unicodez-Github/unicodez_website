@@ -35,7 +35,7 @@ export default function WhatWeOffer() {
               for your customers...
             </p>
             <div className="inline-flex mt-10">
-              <Link href={"/services/custom-solutions"}>
+              <Link href={"/services/custom-software"}>
                 <button className="button primary normal text-center cursor-pointer">
                   Learn More
                 </button>

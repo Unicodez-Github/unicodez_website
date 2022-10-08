@@ -5,17 +5,20 @@ export default function InnovativeProducts() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Unique & Innovative Products</h2>
+            <h2 className="section-title leading-snug">
+              Unique & Innovative Products
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Get unique and innovative products and software built for your
               business and customers. Our solutions are custom, flexible, and
-              start-up friendly.
+              startup friendly, making us the most trusted custom software
+              development company around.
             </p>
           </div>
           <div>
             <div className="w-full h-full relative lg:-mt-12">
               <Image
-                src={"/images/services/custom-solutions-ballon-art.png"}
+                src={"/images/services/custom-software-ballon-art.png"}
                 alt="Unique & Innovative Products - Software Development"
                 layout="responsive"
                 objectFit="contain"

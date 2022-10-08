@@ -18,7 +18,7 @@ const MobileApplicationsHero = () => {
                 </Link>
               </div>
               <h1 className="text-4xl tracking-tight sm:leading-relaxed md:sm:leading-relaxed text-center font-bold text-unicodez-dark sm:text-5xl md:text-6xl max-w-6xl mt-5">
-                <span className="block">Mobile Application Development</span>
+                <span className="block">Your Trusted Mobile Application Development Company</span>
               </h1>
               <div className="w-full flex flex-wrap space-x-6 gap-y-2 justify-center items-center mt-5 text-unicodez-dark sm:text-lg leading-8 sm:md:leading-10">
                 <span>Mobile Software Solutions</span>

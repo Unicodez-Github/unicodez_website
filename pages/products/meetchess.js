@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import Newsletter from "../../components/core/newsletter";
 import ServicesCta from "../../components/services/services-cta";
-import BringYourSoftwareIdeas from "../../components/services/custom-solutions/bring-your-software-ideas";
+import BringYourSoftwareIdeas from "../../components/services/custom-software/bring-your-software-ideas";
 import GetStartedServices from "../../components/services/get-started-services";
 import MeetChessHero from "../../components/hero/meet-chess-hero";
 import CustomizedCoaching from "../../components/products/meetchess/customized-coaching";

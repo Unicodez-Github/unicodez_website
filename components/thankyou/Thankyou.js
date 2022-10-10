@@ -17,7 +17,7 @@ export default function Thanks() {
                                 <div className="inline-flex mx-auto">
                                     <div className="text-white bg-[#EC4699] py-1 px-5 rounded-tl-[24px] rounded-br-[24px]">
                                         <span className="leading-10 text-base font-medium uppercase">
-                                            Thankyou
+                                            Thank You!
                                         </span>
                                     </div>
                                 </div>

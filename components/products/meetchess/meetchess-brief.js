@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function MeetchessBrief() {
   return (
-    <section className="py-24 mt-20">
+    <section className="py-10 md:py-24 mt-5 md:mt-20">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6" data-aos="fade-up">
           <div>

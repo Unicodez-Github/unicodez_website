@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, Transition, Disclosure } from "@headlessui/react";
 import {
   ChartBarIcon,
   CursorClickIcon,
@@ -9,7 +9,8 @@ import {
   XIcon,
   ViewGridAddIcon,
   BriefcaseIcon,
-  CubeTransparentIcon
+  CubeTransparentIcon,
+  ChevronRightIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Logo from "./logo";
@@ -36,31 +37,6 @@ const about = [
     description: "Your customers' data will be safe and secure.",
     href: "/about/clients",
     icon: ShieldCheckIcon,
-  },
-];
-
-const mobileNav = [
-  {
-    name: "About us",
-    href: "/about",
-    icon: ViewGridAddIcon,
-  },
-  {
-    name: "Services",
-    href: "/services",
-    icon: CubeTransparentIcon,
-  },
-  {
-    name: "Products",
-    description: "Your customers' data will be safe and secure.",
-    href: "/products",
-    icon: BriefcaseIcon,
-  },
-  {
-    name: "Contact us",
-    description: "Your customers' data will be safe and secure.",
-    href: "/contact",
-    icon: PhoneIcon,
   },
 ];
 
@@ -119,6 +95,35 @@ const products = [
   {
     name: "Smart Checkout",
     href: "/products/smartcheckout",
+  },
+];
+
+const mobileNav = [
+  {
+    name: "About us",
+    href: "/about",
+    icon: ViewGridAddIcon,
+    children: true,
+    childrenMenuId: about,
+  },
+  {
+    name: "Services",
+    href: "/services",
+    icon: CubeTransparentIcon,
+  },
+  {
+    name: "Products",
+    description: "Your customers' data will be safe and secure.",
+    href: "/products",
+    icon: BriefcaseIcon,
+    children: true,
+    childrenMenuId: products,
+  },
+  {
+    name: "Contact us",
+    description: "Your customers' data will be safe and secure.",
+    href: "/contact",
+    icon: PhoneIcon,
   },
 ];
 
@@ -397,19 +402,75 @@ const Navbar = () => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  {mobileNav.map((item) => (
-                    <Link href={item.href} key={item.name}>
-                      <span className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 cursor-pointer">
-                        <item.icon
-                          className="flex-shrink-0 h-6 w-6 text-unicodez-blue"
-                          aria-hidden="true"
-                        />
-                        <span className="ml-3 text-base font-medium text-gray-900">
-                          {item.name}
+                  {mobileNav.map((item) =>
+                    item.children ? (
+                      <Disclosure>
+                        {({ open }) => (
+                          <>
+                            <Disclosure.Button className="flex w-full justify-between items-center rounded-md hover:bg-gray-50 p-3 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-unicodez-blue focus-visible:ring-opacity-75">
+                              <span
+                                className="-m-3 flex items-center"
+                              >
+                                <item.icon
+                                  className="flex-shrink-0 h-6 w-6 text-unicodez-blue"
+                                  aria-hidden="true"
+                                />
+                                <span className="ml-3 text-base font-medium text-gray-900">
+                                  {item.name}
+                                </span>
+                              </span>
+                              <ChevronRightIcon
+                                className={`${
+                                  open ? "rotate-90 transform" : ""
+                                } transition ease-in-out h-5 w-5 text-unicodez-dark`}
+                              />
+                            </Disclosure.Button>
+                            <Disclosure.Panel className="-mt-6 px-4 text-sm text-gray-500">
+                              {item.childrenMenuId.length > 3 ? (
+                                <div className="grid grid-cols-2 gap-1">
+                                  {item.childrenMenuId.map((child) => {
+                                    return (
+                                      <Link href={child.href} key={child.name}>
+                                        <span className="p-3 flex items-center rounded-md hover:bg-gray-50 cursor-pointer">
+                                          <span className="text-sm font-medium text-gray-900">
+                                            {child.name}
+                                          </span>
+                                        </span>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              ) : (
+                                item.childrenMenuId.map((child) => {
+                                  return (
+                                    <Link href={child.href} key={child.name}>
+                                      <span className="p-3 flex items-center rounded-md hover:bg-gray-50 cursor-pointer">
+                                        <span className="text-sm font-medium text-gray-900">
+                                          {child.name}
+                                        </span>
+                                      </span>
+                                    </Link>
+                                  );
+                                })
+                              )}
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    ) : (
+                      <Link href={item.href} key={item.name}>
+                        <span className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 cursor-pointer">
+                          <item.icon
+                            className="flex-shrink-0 h-6 w-6 text-unicodez-blue"
+                            aria-hidden="true"
+                          />
+                          <span className="ml-3 text-base font-medium text-gray-900">
+                            {item.name}
+                          </span>
                         </span>
-                      </span>
-                    </Link>
-                  ))}
+                      </Link>
+                    )
+                  )}
                 </nav>
               </div>
             </div>

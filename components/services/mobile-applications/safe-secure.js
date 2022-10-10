@@ -5,7 +5,7 @@ export default function SafeSecure() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="lg:mt-10">
-            <h2 className="section-title">Safe and Secure</h2>
+            <h2 className="section-title leading-snug">Safe and Secure</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Our services help you protect your confidential and private data.
               Our software solutions protect your business and customers from

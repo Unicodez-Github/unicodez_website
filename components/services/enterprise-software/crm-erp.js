@@ -17,11 +17,11 @@ export default function CrmErp() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">CRM & ERP</h2>
+            <h2 className="section-title leading-snug">CRM & ERP</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               CRM (Customer Relationship Management) and ERP (Enterprise
               Resource Planning) software are important tools for marketing,
-              sales, and customer service success.{" "}
+              sales, and customer service success.
             </p>
             <div className="inline-flex mt-10">
               <button className="button primary normal text-center !px-16">

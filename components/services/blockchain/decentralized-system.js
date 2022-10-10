@@ -17,10 +17,9 @@ export default function DecentralizedSystem() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Decentralized System</h2>
+            <h2 className="section-title leading-snug">Decentralized System</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              Have direct control over your financial accounts. Store your
-              assets in a network without relinquishing control.
+            Have direct control over your financial accounts. Store your assets in a network without relinquishing control.
             </p>
             <div className="inline-flex mt-10">
               <button className="button primary normal text-center !px-16">

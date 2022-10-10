@@ -22,7 +22,7 @@ const HeroStats = () => {
                         return (
                             <div className="flex flex-col space-y-4 justify-center items-center pt-12 pb-6" key={stat.id}>
                                 <h3 className="text-4xl font-bold text-[#FAB041]">{stat.stat}</h3>
-                                <span className="text-[#7B8292] text-base uppercase">{stat.text}</span>
+                                <span className="text-[#7B8292] text-base uppercase text-center">{stat.text}</span>
                             </div>
                         )
                     })}

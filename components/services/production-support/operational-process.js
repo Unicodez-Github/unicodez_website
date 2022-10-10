@@ -5,13 +5,13 @@ export default function OperationalProcess() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="lg:mt-10">
-            <h2 className="section-title">
+            <h2 className="section-title leading-snug">
               The operational process with diversified S&M solutions
             </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Being trusted support partners to global enterprises, we offer our
-              clients comprehensive maintenance and support services so that you
-              can focus on growing your business instead.
+              clients comprehensive production support and maintenance services
+              so you can focus on growing your business instead.
             </p>
           </div>
           <div>

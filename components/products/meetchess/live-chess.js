@@ -17,7 +17,7 @@ export default function LiveChess() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Live Chess Board</h2>
+            <h2 className="section-title leading-snug">Live Chess Board</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               The live chess board allows teaching and learning in real-time.
               Meetchess coaches can make use of video, audio, and live

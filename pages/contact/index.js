@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import ContactForm from "../../components/contact/contact-form";
 import Newsletter from "../../components/core/newsletter";
 import ContactHero from "../../components/hero/contact-hero";
-import BringYourSoftwareIdeas from "../../components/services/custom-solutions/bring-your-software-ideas";
+import BringYourSoftwareIdeas from "../../components/services/custom-software/bring-your-software-ideas";
 
 export default function Contact() {
   return (

@@ -23,7 +23,7 @@ const ContactHero = () => {
         <Navbar />
         <main className="container -mt-40">
           <div className="grid lg:grid-cols-2">
-            <div className="text-left pt-72">
+            <div className="text-left pt-48 lg:pt-72">
               <h1 className="text-4xl tracking-tight sm:leading-relaxed md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-5xl mt-5">
                 <span className="block">We’d Love To Hear From You</span>
               </h1>

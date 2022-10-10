@@ -17,14 +17,11 @@ export default function DeepBench() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">
+            <h2 className="section-title leading-snug">
               Use our deep bench to avail your desired S&M Solutions Services.
             </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              We recognize the need for you to focus less on the maintenance and
-              support of applications and more on the core commercial activities
-              of your business. Unicodez team’s in-depth expertise and extensive
-              support models help you lower costs and improve response times.
+              We recognize the need for you to focus less on the maintenance and support of applications and more on the core commercial activities of your business. The Unicodez team’s in-depth expertise and extensive support models help you lower costs and improve response times.
             </p>
             <div className="inline-flex mt-10">
               <button className="button primary normal text-center !px-16">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function TechnicalSupport() {
   return (
     <section className="py-24 mt-20 bg-[#FFFCEB]" data-aos="fade-up">
@@ -17,15 +18,19 @@ export default function TechnicalSupport() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Receive Ongoing Technical Support</h2>
+            <h2 className="section-title leading-snug">
+              Receive Ongoing Technical Support
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Our team of customer service agents is available 24/7 to offer
               help and answer questions and inquiries.
             </p>
             <div className="inline-flex mt-10">
-              <button className="button primary normal text-center !px-16">
-                Contact Us
-              </button>
+              <Link href={"/contact"}>
+                <button className="button primary normal text-center !px-16">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

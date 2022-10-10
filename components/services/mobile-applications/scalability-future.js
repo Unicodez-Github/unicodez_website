@@ -17,7 +17,9 @@ export default function ScalabilityFuture() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Scalability for the Future</h2>
+            <h2 className="section-title leading-snug">
+              Scalability for the Future
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Automated reports and records make it possible to scale your
               business.

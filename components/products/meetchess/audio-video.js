@@ -5,7 +5,7 @@ export default function AudioVideo() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Audio/Video Session</h2>
+            <h2 className="section-title leading-snug">Audio/Video Session</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Meetchess is equipped with clear audio and high-resolution video
               sessions. Coaches can communicate easily with students through the

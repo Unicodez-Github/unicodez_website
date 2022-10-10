@@ -5,7 +5,7 @@ export default function TailorBrand() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">
+            <h2 className="section-title leading-snug">
               We tailor to your brand’s needs and specifications{" "}
             </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">

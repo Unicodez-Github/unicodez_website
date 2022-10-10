@@ -31,11 +31,11 @@ const clients = [
     title: "Yash Technologies",
     image: "/images/clients/yashtechnologies.png",
   },
-  // {
-  //   id: 6,
-  //   title: "Express",
-  //   image: "/images/clients/express.png",
-  // },
+  {
+    id: 6,
+    title: "Express",
+    image: "/images/clients/express.png",
+  },
   // {
   //   id: 7,
   //   title: "Cogito",
@@ -47,19 +47,21 @@ export default function ClientsGrid() {
   return (
     <div className="w-full">
       <div className="container">
-        <div className="grid grid-cols-2 lg:grid-cols-4  border-x border-gray-200 border-dashed">
+        <div className="grid grid-cols-2 lg:grid-cols-4 border-x border-gray-200 border-dashed">
           {clients.map((client) => {
             return (
               <div className={`py-10 ${client.id !== 3 && client.id !== 7 && "border-r border-gray-200 border-dashed"}`} key={client.id}>
-                <div className="relative w-[230px] h-[92px] mx-auto">
+                <div className="relative md:w-[230px] md:h-[92px] mx-auto px-6 md:px-0">
                   <Image
                     src={client.image}
                     alt={client.title}
                     title={client.title}
                     layout={"responsive"}
                     objectFit="contain"
+                    objectPosition={"center"}
                     height={"30%"}
                     width={"100%"}
+                    className={`${client.id === 6 && "invisible"}`} // Remove this block to show actual content. This is to keep the grid divider border active
                   />
                 </div>
               </div>

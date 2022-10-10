@@ -5,14 +5,14 @@ import HotAirBalloonImg from "../../public/images/hot-air-balloon-art.png";
 export default function OneStopSolution() {
   return (
     <section
-      className="container py-40 relative"
+      className="container py-20 md:py-40 relative"
       id="onestopsolution"
       data-aos="zoom-in"
     >
       <div className="w-full flex flex-wrap">
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col text-unicodez-dark">
-            <h2 className="section-title">Your One-Stop Solution</h2>
+            <h2 className="section-title leading-snug">Your One-Stop Solution</h2>
             <p className="mt-6 text-2xl font-semibold leading-snug">
               Simple solutions for the most complex problems
             </p>

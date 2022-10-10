@@ -17,11 +17,9 @@ export default function DataSecurity() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Data Security</h2>
+            <h2 className="section-title leading-snug">Data Security</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              Increase the security of your data. Blockchain technology is
-              considered the most secure system because it doesn’t have a point
-              of failure.
+            Increase the security of your data. Blockchain technology is considered highly secure, as it doesn&apos;t have a single point of failure.
             </p>
           </div>
         </div>

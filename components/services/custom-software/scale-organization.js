@@ -17,12 +17,15 @@ export default function ScaleOrganization() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Scale Your Organization Better</h2>
+            <h2 className="section-title leading-snug">
+              Scale Your Organization Better
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              Get custom designed eCommerce platforms, learning management
+              Get custom-designed eCommerce platforms, learning management
               systems, and AI/machine learning software as well as professional
               consultation services from our experts to help scale your
-              business.
+              business. We specialize in software development that helps your
+              business grow.
             </p>
           </div>
         </div>

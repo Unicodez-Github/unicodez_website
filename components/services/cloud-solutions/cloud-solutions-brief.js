@@ -13,10 +13,11 @@ export default function CloudSolutionsBrief() {
             </p>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Unicodez collaborates with trusted partners to provide tailored
-              cloud computing services for your business’ hybrid infrastructure,
-              collocation, backups, full migrations, and more. Our services are
-              designed to suit your requirements and convenience while giving
-              your business the best possible qualities.
+              cloud computing services with the best cloud hosting providers for
+              your business’s hybrid infrastructure, collocation, backups, full
+              migrations, and more. Our services are designed to suit your
+              requirements and convenience while giving your business the best
+              possible qualities.
             </p>
           </div>
           <div>

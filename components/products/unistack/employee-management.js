@@ -17,7 +17,7 @@ export default function EmployeeManagement() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Employee Management Systems</h2>
+            <h2 className="section-title leading-snug">Employee Management Systems</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
             Manage staff hiring, attendance, and productivity with a single system.
             </p>

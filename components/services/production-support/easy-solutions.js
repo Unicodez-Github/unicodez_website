@@ -17,9 +17,13 @@ export default function EasySolutions() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Easy solutions to Integrate Into your Company’s Workflow</h2>
+            <h2 className="section-title leading-snug">
+              Easy solutions to Integrate Into your Company’s Workflow
+            </h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-            The key to seamless integration lies in collaboration and data exchange and that is exactly what we provide.
+              The key to seamless production support and maintenance integration
+              lies in collaboration and data exchange — and that is exactly what
+              we provide.
             </p>
           </div>
         </div>

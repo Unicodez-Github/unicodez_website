@@ -17,9 +17,9 @@ export default function InformationSecurity() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Information Security</h2>
+            <h2 className="section-title leading-snug">Information Security</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              Protect your business’s and customers’ personal information. Keep
+              Protect your business’ and customers’ personal information. Keep
               your business and information safe with security software
               solutions.
             </p>

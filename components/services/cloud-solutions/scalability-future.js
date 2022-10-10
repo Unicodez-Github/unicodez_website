@@ -5,10 +5,9 @@ export default function ScalabilityFuture() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div className="lg:mt-10">
-            <h2 className="section-title">Scalability for the Future</h2>
+            <h2 className="section-title leading-snug">Scalability for the Future</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
-              We make scaling possible with our cost-effective running of
-              workloads. Maximize the use of your resources.
+              We make scaling possible with our cost-effective running of workloads. Maximize the use of your resources.
             </p>
           </div>
           <div>

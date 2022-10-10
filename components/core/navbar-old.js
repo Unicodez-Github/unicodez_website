@@ -7,15 +7,13 @@ import {
   PhoneIcon,
   ShieldCheckIcon,
   XIcon,
-  ViewGridAddIcon,
-  BriefcaseIcon,
-  CubeTransparentIcon
+  ViewGridAddIcon
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import Logo from "./logo";
 import { classNames } from "../../lib/utils";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router'
 
 const about = [
   {
@@ -36,31 +34,6 @@ const about = [
     description: "Your customers' data will be safe and secure.",
     href: "/about/clients",
     icon: ShieldCheckIcon,
-  },
-];
-
-const mobileNav = [
-  {
-    name: "About us",
-    href: "/about",
-    icon: ViewGridAddIcon,
-  },
-  {
-    name: "Services",
-    href: "/services",
-    icon: CubeTransparentIcon,
-  },
-  {
-    name: "Products",
-    description: "Your customers' data will be safe and secure.",
-    href: "/products",
-    icon: BriefcaseIcon,
-  },
-  {
-    name: "Contact us",
-    description: "Your customers' data will be safe and secure.",
-    href: "/contact",
-    icon: PhoneIcon,
   },
 ];
 
@@ -120,13 +93,15 @@ const products = [
     name: "Smart Checkout",
     href: "/products/smartcheckout",
   },
+
 ];
 
 const callsToAction = [
   { name: "Contact Sales", href: "/contact", icon: PhoneIcon },
 ];
 
-const Navbar = () => {
+const NavbarOld = () => {
+
   const router = useRouter();
 
   return (
@@ -143,7 +118,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="-mr-2 -my-2 lg:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-unicodez-dark hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-unicodez-dark shadow-sm">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-unicodez-dark hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-unicodez-dark">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -153,13 +128,7 @@ const Navbar = () => {
             className="hidden lg:flex justify-center space-x-14"
           >
             <Link href="/">
-              <span
-                className={`text-lg font-medium cursor-pointer ${
-                  router.pathname === "/"
-                    ? "text-unicodez-blue"
-                    : "text-unicodez-dark"
-                }`}
-              >
+              <span className={`text-lg font-medium cursor-pointer ${router.pathname === "/" ? 'text-unicodez-blue' : 'text-unicodez-dark' }`}>
                 Home
               </span>
             </Link>
@@ -169,18 +138,14 @@ const Navbar = () => {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open || router.pathname.includes("/about")
-                        ? "text-unicodez-blue"
-                        : "text-unicodez-blueDark",
+                      (open || router.pathname.includes("/about")) ? "text-unicodez-blue" : "text-unicodez-blueDark",
                       "group inline-flex items-center text-lg font-medium hover:text-unicodez-blue focus-visible:ring-0"
                     )}
                   >
                     <span>About</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open || router.pathname.includes("/about")
-                          ? "text-unicodez-blue"
-                          : "text-unicodez-blueDark",
+                        (open || router.pathname.includes("/about")) ? "text-unicodez-blue" : "text-unicodez-blueDark",
                         "ml-2 h-5 w-5 group-hover:text-unicodez-blue"
                       )}
                       aria-hidden="true"
@@ -246,18 +211,14 @@ const Navbar = () => {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open || router.pathname.includes("/services")
-                        ? "text-unicodez-blue"
-                        : "text-unicodez-blueDark",
+                      (open || router.pathname.includes("/services")) ? "text-unicodez-blue" : "text-unicodez-blueDark",
                       "group inline-flex items-center text-lg font-medium hover:text-unicodez-blue"
                     )}
                   >
                     <span>Services</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open || router.pathname.includes("/services")
-                          ? "text-unicodez-blue"
-                          : "text-unicodez-blueDark",
+                        (open || router.pathname.includes("/services")) ? "text-unicodez-blue" : "text-unicodez-blueDark",
                         "ml-2 h-5 w-5 group-hover:text-unicodez-blue"
                       )}
                       aria-hidden="true"
@@ -299,18 +260,14 @@ const Navbar = () => {
                 <>
                   <Popover.Button
                     className={classNames(
-                      open || router.pathname.includes("/products")
-                        ? "text-unicodez-blue"
-                        : "text-unicodez-blueDark",
+                      (open || router.pathname.includes("/products")) ? "text-unicodez-blue" : "text-unicodez-blueDark",
                       "group inline-flex items-center text-lg font-medium hover:text-unicodez-blue"
                     )}
                   >
                     <span>Products</span>
                     <ChevronDownIcon
                       className={classNames(
-                        open || router.pathname.includes("/products")
-                          ? "text-unicodez-blue"
-                          : "text-unicodez-blueDark",
+                        (open || router.pathname.includes("/products")) ? "text-unicodez-blue" : "text-unicodez-blueDark",
                         "ml-2 h-5 w-5 group-hover:text-unicodez-blue"
                       )}
                       aria-hidden="true"
@@ -378,16 +335,14 @@ const Navbar = () => {
       >
         <Popover.Panel
           focus
-          className="fixed top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden z-50"
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden z-50"
         >
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <Link href="/">
-                  <span className="cursor-pointer">
-                    <Logo />
-                  </span>
-                </Link>
+                <div>
+                  <Logo />
+                </div>
                 <div className="-mr-2">
                   <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-unicodez-dark hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-unicodez-dark">
                     <span className="sr-only">Close menu</span>
@@ -397,7 +352,7 @@ const Navbar = () => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  {mobileNav.map((item) => (
+                  {about.map((item) => (
                     <Link href={item.href} key={item.name}>
                       <span className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 cursor-pointer">
                         <item.icon
@@ -416,32 +371,32 @@ const Navbar = () => {
             <div className="py-6 px-5 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <Link href={"/services/custom-software"}>
-                  <span className="text-sm font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
+                  <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
                     Custom Software Development
                   </span>
                 </Link>
                 <Link href={"/services/blockchain"}>
-                  <span className="text-sm font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
+                  <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
                     Blockchain Development
                   </span>
                 </Link>
                 <Link href={"/services/enterprise-software"}>
-                  <span className="text-sm font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
+                  <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
                     Enterprise Software Solutions
                   </span>
                 </Link>
                 <Link href={"/services/production-support-maintenance"}>
-                  <span className="text-sm font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
+                  <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
                     Production Support & Maintenance
                   </span>
                 </Link>
                 <Link href={"/services/mobile-applications"}>
-                  <span className="text-sm font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
-                    Mobile Application Development
+                  <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
+                    Mobile Application Development 
                   </span>
                 </Link>
                 <Link href={"/services/cloud-solutions"}>
-                  <span className="text-sm font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
+                  <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
                     Cloud Software Solutions
                   </span>
                 </Link>
@@ -453,17 +408,17 @@ const Navbar = () => {
                   rel="noreferrer noopener"
                 >
                   <span className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-unicodez-blue hover:bg-opacity-90">
-                    Employee Login
+                    Request a proposal
                   </span>
                 </a>
-                {/* <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Registered user?{" "}
-                  <Link href="https://unistack.herokuapp.com/">
+                <p className="mt-6 text-center text-base font-medium text-gray-500">
+                  Need support?{" "}
+                  <Link href="/contact">
                     <span className="text-unicodez-blue hover:text-opacity-90 cursor-pointer">
-                     Login
+                      Contact us
                     </span>
                   </Link>
-                </p> */}
+                </p>
               </div>
             </div>
           </div>
@@ -473,4 +428,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarOld;

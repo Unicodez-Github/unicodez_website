@@ -11,7 +11,9 @@ export default function Services() {
   return (
     <Fragment>
       <Head>
-        <title>Services :: Unicodez - Starts with you!</title>
+        <title>What We Offer | Software Engineering and Development</title>
+        <meta name="description" content="At Unicodez, we see ourselves as the lead architects in your business plan. Learn more about what we offer here, then contact us today!"/>
+        <meta name="keywords" content="Software engineering, mobile app development, hire a developer" />
       </Head>
       <ServicesHero />
       <WhatWeOffer />

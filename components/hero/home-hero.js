@@ -27,12 +27,12 @@ const HomeHero = () => {
         <Navbar />
         <main className="container mt-16 sm:mt-24">
           <div className="text-left">
-            <h1 className="text-4xl tracking-tight sm:leading-relaxed md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl tracking-tight sm:leading-relaxed md:sm:leading-relaxed font-bold text-unicodez-dark sm:text-5xl md:text-6xl space-y-2 md:space-y-0">
               <span className="block">Software</span>
               <span className="block">Solutions for</span>
               <span className="block">Business Growth</span>
             </h1>
-            <p className="my-6 md:mt-2 max-w-md text-base font-medium text-unicodez-dark sm:text-lg  md:max-w-lg sm:md:leading-10">
+            <p className="mt-10 md:mt-2 my-6 max-w-md text-base font-medium text-unicodez-dark sm:text-lg md:max-w-lg sm:md:leading-10">
               <span className="relative bg-unicodez-dark text-white p-4">
                 <span className="h-20 pt-2 overflow-x-hidden whitespace-nowrap">
                  Unicodez Starts with <span className="animate-pulse text-unicodez-pink">yoU!</span>
@@ -40,13 +40,13 @@ const HomeHero = () => {
                 {/* <span className="animated-cursor absolute -bottom-0 left-0 -top-1 inline-block bg-[#FBF8FB] w-full animate-type will-change"></span> */}
               </span>
             </p>
-            <p className="mt-5 max-w-md text-base font-medium text-unicodez-dark sm:text-lg md:mt-5 md:text-xl md:max-w-lg sm:md:leading-10">
+            <p className="mt-10 max-w-md text-base font-medium text-unicodez-dark sm:text-base md:mt-5 md:text-xl md:max-w-lg leading-6 sm:md:leading-10">
               A combination of software artistry and business genius.
             </p>
             <div className="mt-5 max-w-md sm:flex justify-center sm:justify-start md:mt-8">
-              <div className="rounded-md shadow max-w-xs">
+              <div className="rounded-md max-w-xs">
                 <Link href={"#onestopsolution"}>
-                  <span className="w-full flex items-center justify-center px-8 py-2 border border-transparent text-base font-medium rounded-md text-white bg-unicodez-blue hover:bg-opacity-90 md:py-4 md:px-14 cursor-pointer">
+                  <span className="md:w-full inline-flex items-center justify-start md:justify-center px-8 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-unicodez-blue hover:bg-opacity-90 md:py-4 md:px-14 shadow cursor-pointer">
                     <span>Learn More</span>
                     <svg
                       width="16"

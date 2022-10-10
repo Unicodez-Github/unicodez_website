@@ -17,7 +17,7 @@ export default function CustomizedCoaching() {
             </div>
           </div>
           <div className="lg:mt-10">
-            <h2 className="section-title">Customized Coaching Platform</h2>
+            <h2 className="section-title leading-snug">Customized Coaching Platform</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               The Meetchess coaching platform is customized to the nines. We
               spared no feature in creating the best chess platform. <br />

@@ -8,7 +8,8 @@ export default function MobileApplicationsBrief() {
             want to receive your services at their total convenience and we can
             help you do just that. Our core team of experts has been creating
             high-performance, feature-packed solutions for Android and iOS
-            platforms for years.
+            platforms for years, and as specialists in mobile app development,
+            we strive to provide solutions that work for our clients.
           </p>
           <p className="mt-10 text-unicodez-text text-lg text-center leading-[40px]">
             Our agile development methodology, team of experts, and unmatched

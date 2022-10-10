@@ -5,7 +5,7 @@ export default function BusinessDatabase() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-6">
           <div>
-            <h2 className="section-title">Business Database</h2>
+            <h2 className="section-title leading-snug">Business Database</h2>
             <p className="mt-10 text-unicodez-text text-lg leading-[40px]">
               Contain important information about your business, customers, and
               employees in one single location. Unistack makes management simple

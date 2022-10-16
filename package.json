@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && next-sitemap",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,6 +16,7 @@
     "@heroicons/react": "^1.0.6",
     "aos": "^2.3.4",
     "next": "12.2.2",
+    "next-sitemap": "^3.1.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-toastify": "^9.0.8",

@@ -404,7 +404,7 @@ const Navbar = () => {
                 <nav className="grid gap-y-8">
                   {mobileNav.map((item) =>
                     item.children ? (
-                      <Disclosure>
+                      <Disclosure key={item.name}>
                         {({ open }) => (
                           <>
                             <Disclosure.Button className="flex w-full justify-between items-center rounded-md hover:bg-gray-50 p-3 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-unicodez-blue focus-visible:ring-opacity-75">

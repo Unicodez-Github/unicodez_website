@@ -51,7 +51,7 @@ const ContactHero = () => {
                           fill="currentColor"
                         />
                       </svg>
-                      <span>+1 - 917 908 9911</span>
+                      <span>+1 - 254 677 8119 </span>
                     </a>
                   </li>
                   <li>

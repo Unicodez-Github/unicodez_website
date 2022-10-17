@@ -32,7 +32,7 @@ const Footer = () => {
                 Address
               </h4>
               <ul className="flex flex-col text-unicodez-text space-y-4 mt-3 font-medium">
-                <li><a href="tel:+19179089911" className="cursor-pointer">+1 – 917 908 9911 </a></li>
+                <li><a href="tel:+19179089911" className="cursor-pointer">+1 – 254 677 8119 </a></li>
                 <li><a href="tel:+918770078276" className="cursor-pointer">+91 – 8770078276</a></li>
                 <li><a href="mailto:info@unicodez.com" className="cursor-pointer">info@unicodez.com</a></li>
                 <li className="flex items-start space-x-2.5">

@@ -181,7 +181,7 @@ const Footer = () => {
       <section className="w-full bg-unicodez-gray">
         <div className="container py-10">
           <div className="flex flex-wrap justify-between items-center text-sm">
-            <Link href={"/terms&conditions"}>
+            <Link href={"/privacy-policy"} className="cursor-pointer">
               <span className="text-base text-white hover:text-opacity-80">
                 Privacy Policy
               </span>

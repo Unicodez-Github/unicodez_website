@@ -31,7 +31,18 @@ const team = [
     linkedin: "#",
     picture: "/images/team/suarav-unicodez.png",
   },
+  {
+    id: 3,
+    name: "Tom Wood, Jr.",
+    role: "Business Development Specialist",
+    quote:
+      "Tom Wood holds Master’s Degrees in International Business Administration and Environmental Sciences.  He has spent many years in Business Development, specializing in software sales across a wide range of vertical industries.",
+    email: "tom@unicodez.com",
+    linkedin: "https://www.linkedin.com/in/tom-wood-jr-5404346/",
+    picture: "/images/team/tom.png",
+  },
 ];
+
 
 export default function TeamGrid() {
   return (
@@ -41,15 +52,16 @@ export default function TeamGrid() {
           {team.map((item) => {
             return (
               <div
-                className={`min-h-[700px] lg:min-h-[700px] rounded-[20px] text-unicodez-dark p-10 lg:p-16 relative overflow-hidden ${
-                  item.id === 0
-                    ? "bg-[#CFB838]"
-                    : item.id === 1
+                className={`min-h-[700px] lg:min-h-[700px] rounded-[20px] text-unicodez-dark p-10 lg:p-16 relative overflow-hidden ${item.id === 0
+                  ? "bg-[#CFB838]"
+                  : item.id === 1
                     ? "bg-[#E0E0E0]"
                     : item.id === 2
-                    ? "bg-[#D1E6EB]"
-                    : "bg-[#D3D4FF]"
-                }`}
+                      ? "bg-[#D1E6EB]"
+                      : item.id == 3
+                        ? "bg-[#EC4699]"
+                        : "bg-[#D3D4FF]"
+                  }`}
                 key={item.id}
               >
                 <h3 className="text-3xl font-bold leading-[35px]">
@@ -129,6 +141,6 @@ export default function TeamGrid() {
           })}
         </div>
       </div>
-    </div>
+    </div >
   );
 }

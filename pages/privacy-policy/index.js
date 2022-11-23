@@ -8,7 +8,7 @@ export default function Terms() {
         <Fragment>
             <Navbar />
             <Head>
-                <title>Terms and conditions</title>
+                <title>Privacy policy</title>
             </Head>
             <div className="mb-40">
                 <main className="container -mt-40">
@@ -18,7 +18,7 @@ export default function Terms() {
                                 <Link href={"/terms&conditions"}>
                                     <div className="text-white bg-[#EC4699] hover:bg-opacity-80 py-1 px-10 rounded-tl-[24px] rounded-br-[24px] cursor-pointer transition">
                                         <span className="leading-10 text-base font-medium uppercase">
-                                            Terms and conditions
+                                            Privacy Policy
                                         </span>
                                     </div>
                                 </Link>
@@ -37,7 +37,7 @@ export default function Terms() {
                 <h3>
                     <b>This policy applies to information we collect:</b>
                 </h3>
-                <ul style={{ "list-style-type": "disc", textAlign: 'left' }}>
+                <ul style={{ listStyleType: "disc", textAlign: 'left' }}>
                     <li> On this Website.</li>
                     <li> In e-mail, text and other electronic messages between you and this Website.</li>
                     <li>  Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website.</li>

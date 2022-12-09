@@ -20,10 +20,8 @@ export default function ContactForm() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    <Link href="/thankyou"><a></a></Link>
     const { from_name, from_email, from_contact, from_message } = form;
     if (from_name == '' || from_email == '' || from_contact == '' || from_message == '') {
-      console.log('here');
       toast.error("Please fill all details !", {
         position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 3000,
@@ -35,20 +33,29 @@ export default function ContactForm() {
         from_contact,
         from_message
       }
-      emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
-        .then((response) => {
-          toast.success("Your query is registered !", {
-            position: toast.POSITION.BOTTOM_LEFT,
-            autoClose: 3000,
-          });
-          setflag(true);
-          Router.push("/thankyou");
-        }, (err) => {
-          toast.error("Please try after sometime!", {
-            position: toast.POSITION.BOTTOM_LEFT,
-            autoClose: 3000,
-          });
+      if (from_contact.length < 9 && from_contact.length < 13) {
+        console.log("here")
+        toast.error("Please check phone number !", {
+          position: toast.POSITION.BOTTOM_LEFT,
+          autoClose: 3000,
         });
+      } else {
+        emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
+          .then((response) => {
+            toast.success("Your query is registered !", {
+              position: toast.POSITION.BOTTOM_LEFT,
+              autoClose: 3000,
+            });
+            setflag(true);
+            Router.push("/thankyou");
+          }, (err) => {
+            toast.error("Please try after sometime!", {
+              position: toast.POSITION.BOTTOM_LEFT,
+              autoClose: 3000,
+            });
+          });
+        <Link href="/thankyou"><a></a></Link>
+      }
     }
   }
   return (

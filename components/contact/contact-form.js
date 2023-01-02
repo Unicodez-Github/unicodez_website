@@ -4,6 +4,7 @@ import Router from "next/router";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from "next/link";
+import { emptyStr, validate_email, validate_phone } from "./validate";
 
 export default function ContactForm() {
   const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
@@ -20,22 +21,26 @@ export default function ContactForm() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const { from_name, from_email, from_contact, from_message } = form;
-    if (from_name == '' || from_email == '' || from_contact == '' || from_message == '') {
+    if (!emptyStr(form)) {
       toast.error("Please fill all details !", {
         position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 3000,
       });
     } else {
+      const { from_name, from_email, from_contact, from_message } = form;
       const params = {
         from_name,
         from_email,
         from_contact,
         from_message
       }
-      if (from_contact.length < 9 && from_contact.length < 13) {
-        console.log("here")
+      if (!validate_phone(from_contact)) {
         toast.error("Please check phone number !", {
+          position: toast.POSITION.BOTTOM_LEFT,
+          autoClose: 3000,
+        });
+      } else if (!validate_email(from_email)) {
+        toast.error("Please check email !", {
           position: toast.POSITION.BOTTOM_LEFT,
           autoClose: 3000,
         });
@@ -84,6 +89,7 @@ export default function ContactForm() {
                   name="from_contact"
                   required
                   inputMode="numeric"
+                  onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
                   onChange={formHandler}
                 />
                 <input

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../core/logo";
+import { useEffect, useState } from "react";
 
 const services = [
   { id: 0, title: "Custom Software Development", href: "/services/custom-software" },
@@ -18,7 +19,17 @@ const products = [
   { id: 4, title: "Smart Checkout", href: "/products/smartcheckout" },
 ];
 
+
+
 const Footer = () => {
+  const [date, setdate] = useState('');
+
+  useEffect(() => {
+    const d = new Date();
+    let year = d.getFullYear();
+    setdate(year);
+  }, [])
+
   return (
     <footer className="w-full bg-[#FBF8FB]">
       <section className="container">
@@ -187,7 +198,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-white">
-              &copy; All Rights Reserved. 2022 UNICODEZ
+              &copy; All Rights Reserved. {date} UNICODEZ
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 export const validate_phone = (str) => {
     let phoneNum = str.replace(/[^\d]/g, '');
-    if (phoneNum.length > 9 && phoneNum.length < 13) {
+    if (phoneNum.length > 9 && phoneNum.length < 11) {
         if (Number(str) == NaN) {
             return false;
         }
@@ -18,9 +18,9 @@ export const validate_email = (str) => {
         );
 }
 
-export const emptyStr = (form) => {
-    const { from_name, from_email, from_contact, from_message } = form;
-    if (from_name == '' || from_email == '' || from_contact == '' || from_message == '') {
+export const emptyStr = (form, phoneNumber) => {
+    const { from_name, from_email, from_message } = form;
+    if (from_name == '' || from_email == '' || phoneNumber == undefined || from_message == '') {
         return false;
     }
     return true;

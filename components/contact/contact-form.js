@@ -1,14 +1,23 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import 'react-phone-number-input/style.css'
 import Router from "next/router";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from "next/link";
+import PhoneInput from 'react-phone-number-input'
 import { emptyStr, validate_email, validate_phone } from "./validate";
 
+
+const notify = (str) => {
+  toast.error(str, {
+    position: toast.POSITION.BOTTOM_LEFT,
+    autoClose: 3000,
+  });
+}
 export default function ContactForm() {
   const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
-  const [flag, setflag] = useState(false);
+  const [phoneNumber, setphoneNumber] = useState();
   const formHandler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -21,29 +30,20 @@ export default function ContactForm() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (!emptyStr(form)) {
-      toast.error("Please fill all details !", {
-        position: toast.POSITION.BOTTOM_LEFT,
-        autoClose: 3000,
-      });
+    if (!emptyStr(form, phoneNumber)) {
+      notify('Please fill all details !');
     } else {
-      const { from_name, from_email, from_contact, from_message } = form;
+      const { from_name, from_email, from_message } = form;
       const params = {
         from_name,
         from_email,
-        from_contact,
+        from_contact: phoneNumber,
         from_message
       }
-      if (!validate_phone(from_contact)) {
-        toast.error("Please check phone number !", {
-          position: toast.POSITION.BOTTOM_LEFT,
-          autoClose: 3000,
-        });
-      } else if (!validate_email(from_email)) {
-        toast.error("Please check email !", {
-          position: toast.POSITION.BOTTOM_LEFT,
-          autoClose: 3000,
-        });
+      console.log(params)
+
+      if (!validate_email(from_email)) {
+        notify("Please check email !");
       } else {
         emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
           .then((response) => {
@@ -69,7 +69,7 @@ export default function ContactForm() {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="bg-[#FFF2CD] p-10 rounded-3xl">
-            <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md">
+            <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md b">
               Leave us a little info, and we&lsquo;ll be in touch.
             </h2>
             <form>
@@ -82,16 +82,14 @@ export default function ContactForm() {
                   required
                   onChange={formHandler}
                 />
-                <input
-                  type="number"
-                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
-                  placeholder="Enter Your Phone Number"
-                  name="from_contact"
-                  required
-                  inputMode="numeric"
-                  onFocus={(e) => e.target.addEventListener("wheel", function (e) { e.preventDefault() }, { passive: false })}
-                  onChange={formHandler}
-                />
+
+                <PhoneInput
+                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 outline-none border-none "
+                  placeholder="Enter phone number"
+                  name="from_name"
+                  value={phoneNumber}
+                  onChange={setphoneNumber} />
+
                 <input
                   type="email"
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"

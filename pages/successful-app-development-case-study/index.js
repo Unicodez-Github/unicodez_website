@@ -40,7 +40,7 @@ export default function caseStudy() {
                                     <span className="block">Case Study:</span>
                                 </h1>
                                 <span className="block mt-5 text-unicodez-dark sm:text-lg">
-                                    American Unit
+                                    Businesses Software Company
                                 </span>
                                 <span className="block mt-5 text-unicodez-dark sm:text-lg">
                                     <Link href="/contact">

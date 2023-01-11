@@ -392,7 +392,7 @@ const NavbarOld = () => {
                 </Link>
                 <Link href={"/services/mobile-applications"}>
                   <span className="text-base font-medium text-unicodez-dark hover:text-unicodez-blue cursor-pointer">
-                    Mobile Application Development 
+                    Mobile Application Development
                   </span>
                 </Link>
                 <Link href={"/services/cloud-solutions"}>

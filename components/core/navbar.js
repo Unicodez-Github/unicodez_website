@@ -38,6 +38,12 @@ const about = [
     href: "/about/clients",
     icon: ShieldCheckIcon,
   },
+  {
+    name: "Case Study",
+    description: "Customer Success Story",
+    href: "/about/case-study",
+    icon: ShieldCheckIcon,
+  },
 ];
 
 const services = [

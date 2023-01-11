@@ -39,7 +39,7 @@ export default function caseStudy() {
                                     <span className="block">Case Study 2:</span>
                                 </h1>
                                 <span className="block mt-5 text-unicodez-dark sm:text-lg">
-                                    Cuboid IT Solutions: http://cuboidits.com/
+                                    Businesses Software Company
                                 </span>
                                 <span className="block mt-5 text-unicodez-dark sm:text-lg">
                                     <Link href="/contact">

@@ -40,9 +40,7 @@ export default function ContactForm() {
         from_contact: phoneNumber,
         from_message
       }
-      console.log(params)
-
-      if (!validate_email(from_email)) {
+          if (!validate_email(from_email)) {
         notify("Please check email !");
       } else {
         emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
@@ -51,7 +49,6 @@ export default function ContactForm() {
               position: toast.POSITION.BOTTOM_LEFT,
               autoClose: 3000,
             });
-            setflag(true);
             Router.push("/thankyou");
           }, (err) => {
             toast.error("Please try after sometime!", {
@@ -59,7 +56,6 @@ export default function ContactForm() {
               autoClose: 3000,
             });
           });
-        <Link href="/thankyou"><a></a></Link>
       }
     }
   }

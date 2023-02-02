@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import 'react-phone-number-input/style.css'
 import Router from "next/router";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Link from "next/link";
 import PhoneInput from 'react-phone-number-input'
-import { emptyStr, validate_email, validate_phone } from "./validate";
-
+import { emptyStr, validate_email } from "./validate";
+import Reaptcha from "reaptcha";
+import { REACT_APP_SITE_KEY } from "../utils/constant";
+// import './style.css'
 
 const notify = (str) => {
   toast.error(str, {
@@ -18,6 +19,9 @@ const notify = (str) => {
 export default function ContactForm() {
   const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
   const [phoneNumber, setphoneNumber] = useState();
+  const [recaptchaReady, setrecaptchaReady] = useState(true);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const captchaRef = useRef(null);
   const formHandler = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -28,6 +32,16 @@ export default function ContactForm() {
     )
   };
 
+
+  const verify = () => {
+    captchaRef.current.getResponse().then(res => {
+      setrecaptchaReady(false);
+      setCaptchaToken(res);
+    }).catch(err => {
+      console.log(err)
+    })
+
+  }
   const submitHandler = (e) => {
     e.preventDefault();
     if (!emptyStr(form, phoneNumber)) {
@@ -40,7 +54,7 @@ export default function ContactForm() {
         from_contact: phoneNumber,
         from_message
       }
-          if (!validate_email(from_email)) {
+      if (!validate_email(from_email)) {
         notify("Please check email !");
       } else {
         emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
@@ -103,8 +117,13 @@ export default function ContactForm() {
                   required
                   onChange={formHandler}
                 />
+                <Reaptcha
+                  sitekey={REACT_APP_SITE_KEY}
+                  ref={captchaRef}
+                  onVerify={verify}
+                ></Reaptcha>
                 <div className="mb-10">
-                  <button className="button primary normal" onClick={submitHandler}>Submit</button>
+                  <button id="verify" className="button primary normal disabled:bg-slate-100" onClick={submitHandler} disabled={recaptchaReady}>Submit</button>
                 </div>
               </div>
             </form>

@@ -168,7 +168,6 @@ export default function ContactForm() {
       })
       .catch(err => {
         notifyError('Please Try After Some Time');
-
       })
   }
 

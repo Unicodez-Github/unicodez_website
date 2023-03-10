@@ -25,7 +25,7 @@ export default function Thanks() {
                                     <span className="block">Thankyou</span>
                                 </h1> */}
                                 <p className="mt-5 max-w-2xl text-base text-center font-medium text-unicodez-dark sm:text-lg md:mt-5 md:text-xl md:max-w-3xl leading-8 sm:md:leading-10">
-                                    We will get back to you as soon as possible.
+                                    Your Query has been registered. We will get back to you as soon as possible.
                                 </p>
                             </div>
                         </div>

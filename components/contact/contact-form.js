@@ -1,26 +1,36 @@
-import { useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
-import 'react-phone-number-input/style.css'
+/* global grecaptcha */
+import { useEffect, useRef, useState } from "react";
 import Router from "next/router";
-import { toast, ToastContainer } from 'react-toastify';
+import 'react-phone-number-input/style.css'
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PhoneInput from 'react-phone-number-input'
 import { emptyStr, validate_email } from "./validate";
 import Reaptcha from "reaptcha";
 import { REACT_APP_SITE_KEY } from "../utils/constant";
-// import './style.css'
+import VerificationModal from "./VerificationModal";
+import { notifyError, notifySuccess } from "../utils/notificationCollection";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { addDetailsToUsers, firebaseAuth, getFireData } from "./FirebaseSDK";
+import axios from "axios";
+import { encrypt } from "./helpers";
+import { Circles } from "react-loader-spinner";
 
-const notify = (str) => {
-  toast.error(str, {
-    position: toast.POSITION.BOTTOM_LEFT,
-    autoClose: 3000,
-  });
-}
+
 export default function ContactForm() {
+  let baseURL = "https://unicodez-website-backend.herokuapp.com";
+  // let baseURL = "http://localhost:2000"
   const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
+  const [confirmPhone, setConfirmPhone] = useState(null);
+  const [otps, setotps] = useState({});
+  const [receivedOTP, setreceivedOTP] = useState('');
+  const [modal, setModal] = useState(false);
   const [phoneNumber, setphoneNumber] = useState();
-  const [recaptchaReady, setrecaptchaReady] = useState(true);
-  const [captchaToken, setCaptchaToken] = useState(null);
+  const [inProgress, setinProgress] = useState(false);
+  const [modalProgress, setmodalProgress] = useState(false);
+
+  // const [recaptchaReady, setrecaptchaReady] = useState(true);
+  // const [captchaToken, setCaptchaToken] = useState(null);
   const captchaRef = useRef(null);
   const formHandler = (e) => {
     e.preventDefault();
@@ -33,54 +43,145 @@ export default function ContactForm() {
   };
 
 
-  const verify = () => {
-    captchaRef.current.getResponse().then(res => {
-      setrecaptchaReady(false);
-      setCaptchaToken(res);
-    }).catch(err => {
-      console.log(err)
-    })
+  // const verify = () => {
+  //   captchaRef.current.getResponse().then(res => {
+  //     setrecaptchaReady(false);
+  //     setCaptchaToken(res);
+  //   }).catch(err => {
+  //     console.log(err)
+  //   })
+
+  // }
+
+  useEffect(() => {
+    if (window.localStorage.getItem('formData') != null) {
+      let localData = JSON.parse(window.localStorage.getItem('formData'));
+      // console.debug(localData);
+      setform(localData);
+    }
+  }, [])
+
+
+  const submitHandler = async (e) => {
+    setinProgress(true);
+    e.preventDefault();
+    let data = {
+      name: form.from_name,
+      email: form.from_email,
+      phone: phoneNumber,
+      text: form.from_message
+
+    }
+
+    let slug = form.from_email.split('@');
+    if (slug === 'hotmail.com' || slug === 'live.com') {
+      return;
+    }
+    if (!form.from_email || !phoneNumber || !form.from_name || !form.from_message) {
+      setinProgress(false);
+      notifyError("Please Fill Out All details");
+      // Router.reload(window.location.pathname)
+      return;
+    }
+    let k = await getFireData(form.from_email, phoneNumber, 'contacts');
+    if (k) {
+      notifySuccess("Your Query Has already been Registered");
+      Router.push("/thankyou");
+      return;
+    }
+    /* Stop Form for testing */
+    window.localStorage.setItem('formData', JSON.stringify(data));
+    const emailOTP = await getEmailOtp();
+    setreceivedOTP(emailOTP);
+    sendOTPToPhone();
+    setModal(true);
 
   }
-  const submitHandler = (e) => {
-    e.preventDefault();
-    if (!emptyStr(form, phoneNumber)) {
-      notify('Please fill all details !');
-    } else {
-      const { from_name, from_email, from_message } = form;
-      const params = {
-        from_name,
-        from_email,
-        from_contact: phoneNumber,
-        from_message
+
+
+  const sendOTPToPhone = (e) => {
+    window.recaptchaVerifier = new RecaptchaVerifier('verify', {
+      'size': 'invisible',
+      'callback': (response) => {
+        onSignInSubmit();
       }
-      if (!validate_email(from_email)) {
-        notify("Please check email !");
-      } else {
-        emailjs.send('service_7spd8s7', 'template_0wpxohk', params, 'uIJYex5lRSxy_7e2h')
-          .then((response) => {
-            toast.success("Your query is registered !", {
-              position: toast.POSITION.BOTTOM_LEFT,
-              autoClose: 3000,
-            });
-            Router.push("/thankyou");
-          }, (err) => {
-            toast.error("Please try after sometime!", {
-              position: toast.POSITION.BOTTOM_LEFT,
-              autoClose: 3000,
-            });
-          });
-      }
-    }
+    }, firebaseAuth)
+    const appVerifier = window.recaptchaVerifier;
+    signInWithPhoneNumber(firebaseAuth, phoneNumber, appVerifier)
+      .then(confirmResult => {
+        setConfirmPhone(confirmResult);
+        setModal(true);
+      })
+      .catch(err => {
+        notifyError('Error in sending phone OTP');
+        Router.reload();
+        setinProgress(false)
+      })
   }
+
+  const getEmailOtp = async () => {
+    const { data: res } = await axios.get(`${baseURL}/generate-token`, {
+      params: {
+        email: form.from_email,
+      },
+    })
+    return encrypt(res);
+  }
+
+  const submitUserOTP = async () => {
+    let phone = false;
+    let email = false;
+    setmodalProgress(true);
+    if (otps.emailOtp == receivedOTP) {
+      email = true;
+
+    } else {
+      notifyError('Please Enter Correct OTP of Email')
+    }
+    await confirmPhone.confirm(otps.phoneOtp)
+      .then(result => {
+        phone = true;
+      })
+      .catch(err => Router.reload())
+    if (phone && email) {
+      // bug
+      setmodalProgress(false);
+      notifySuccess("Your Query Has Been Registered. Thankyou");
+      setModal(false);
+      sendEmail();
+    }
+    return;
+  }
+
+  const sendEmail = async () => {
+    let data = {
+      name: form.from_name,
+      email: form.from_email,
+      phone: phoneNumber,
+      text: form.from_message
+    }
+    await addDetailsToUsers(form.from_email, phoneNumber, 'contacts');
+    axios.post(`${baseURL}/send-email`, data)
+      .then((res) => {
+        notifySuccess('Your query is registered !');
+        Router.push("/thankyou");
+      })
+      .catch(err => {
+        notifyError('Please Try After Some Time');
+
+      })
+  }
+
   return (
     <section className="w-full py-24" data-aod="fade-up">
       <ToastContainer />
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="bg-[#FFF2CD] p-10 rounded-3xl">
+
             <h2 className="section-title font-medium text-lg lg:text-3xl lg:leading-snug max-w-md b">
               Leave us a little info, and we&lsquo;ll be in touch.
+              {modal && <VerificationModal inProgress={modalProgress} setotps={setotps} open={modal} setModal={setModal} submitUserOTP={submitUserOTP} />}
             </h2>
             <form>
               <div className="space-y-10 mt-16">
@@ -90,6 +191,7 @@ export default function ContactForm() {
                   placeholder="Enter Your Name"
                   name="from_name"
                   required
+                  value={form.from_name || ''}
                   onChange={formHandler}
                 />
 
@@ -97,9 +199,7 @@ export default function ContactForm() {
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 outline-none border-none "
                   placeholder="Enter phone number"
                   name="from_name"
-                  value={phoneNumber}
                   onChange={setphoneNumber} />
-
                 <input
                   type="email"
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
@@ -107,8 +207,8 @@ export default function ContactForm() {
                   required
                   name="from_email"
                   onChange={formHandler}
-                />
 
+                />
                 <textarea
                   rows={10}
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 resize-none"
@@ -117,13 +217,27 @@ export default function ContactForm() {
                   required
                   onChange={formHandler}
                 />
-                <Reaptcha
+                {/* <Reaptcha
                   sitekey={REACT_APP_SITE_KEY}
                   ref={captchaRef}
                   onVerify={verify}
-                ></Reaptcha>
+                ></Reaptcha> */}
                 <div className="mb-10">
-                  <button id="verify" className="button primary normal disabled:bg-slate-100" onClick={submitHandler} disabled={recaptchaReady}>Submit</button>
+                  {/* disabled={recaptchaReady} */}
+                  {(inProgress) ? <Circles
+                    height="40"
+                    width="40"
+                    color="#3498db"
+                    ariaLabel="circles-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                  /> :
+                    <button id="verifyForm" className="button primary normal disabled:bg-slate-100" onClick={submitHandler} >Submit</button>
+                  }
+
+                  <div id="verify"></div>
+
                 </div>
               </div>
             </form>

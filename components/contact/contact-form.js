@@ -114,7 +114,6 @@ export default function ContactForm() {
       })
       .catch(err => {
         notifyError('Error in sending phone OTP');
-        Router.reload();
         setinProgress(false)
       })
   }

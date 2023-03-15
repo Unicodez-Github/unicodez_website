@@ -4,7 +4,6 @@ import Router from "next/router";
 import 'react-phone-number-input/style.css'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import PhoneInput from 'react-phone-number-input'
 import { emptyStr, validate_email } from "./validate";
 import Reaptcha from "reaptcha";
 import { REACT_APP_SITE_KEY } from "../utils/constant";
@@ -13,13 +12,16 @@ import { notifyError, notifySuccess } from "../utils/notificationCollection";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { addDetailsToUsers, firebaseAuth, getFireData } from "./FirebaseSDK";
 import axios from "axios";
-import { encrypt } from "./helpers";
+import { encrypt, filterSlug } from "./helpers";
 import { Circles } from "react-loader-spinner";
+import PhoneInput from "react-phone-input-2";
+import 'react-phone-input-2/lib/style.css'
+
+
 
 
 export default function ContactForm() {
   let baseURL = "https://unicodez-website-backend.herokuapp.com";
-  // let baseURL = "http://localhost:2000"
   const [form, setform] = useState({ from_name: '', from_email: '', from_contact: '', from_message: '' });
   const [confirmPhone, setConfirmPhone] = useState(null);
   const [otps, setotps] = useState({});
@@ -29,8 +31,6 @@ export default function ContactForm() {
   const [inProgress, setinProgress] = useState(false);
   const [modalProgress, setmodalProgress] = useState(false);
 
-  // const [recaptchaReady, setrecaptchaReady] = useState(true);
-  // const [captchaToken, setCaptchaToken] = useState(null);
   const captchaRef = useRef(null);
   const formHandler = (e) => {
     e.preventDefault();
@@ -43,20 +43,10 @@ export default function ContactForm() {
   };
 
 
-  // const verify = () => {
-  //   captchaRef.current.getResponse().then(res => {
-  //     setrecaptchaReady(false);
-  //     setCaptchaToken(res);
-  //   }).catch(err => {
-  //     console.log(err)
-  //   })
-
-  // }
 
   useEffect(() => {
     if (window.localStorage.getItem('formData') != null) {
       let localData = JSON.parse(window.localStorage.getItem('formData'));
-      // console.debug(localData);
       setform(localData);
     }
   }, [])
@@ -65,24 +55,20 @@ export default function ContactForm() {
   const submitHandler = async (e) => {
     setinProgress(true);
     e.preventDefault();
-    let data = {
-      name: form.from_name,
-      email: form.from_email,
-      phone: phoneNumber,
-      text: form.from_message
+    let data = { name: form.from_name, email: form.from_email, phone: phoneNumber, text: form.from_message }
 
-    }
-
-    let slug = form.from_email.split('@');
-    if (slug === 'hotmail.com' || slug === 'live.com') {
-      return;
-    }
     if (!form.from_email || !phoneNumber || !form.from_name || !form.from_message) {
       setinProgress(false);
       notifyError("Please Fill Out All details");
-      // Router.reload(window.location.pathname)
       return;
     }
+
+    if (!filterSlug(form.from_email)) {
+      setinProgress(false);
+
+      return;
+    }
+
     let k = await getFireData(form.from_email, phoneNumber, 'contacts');
     if (k) {
       notifySuccess("Your Query Has already been Registered");
@@ -107,7 +93,8 @@ export default function ContactForm() {
       }
     }, firebaseAuth)
     const appVerifier = window.recaptchaVerifier;
-    signInWithPhoneNumber(firebaseAuth, phoneNumber, appVerifier)
+    let pn = `+${phoneNumber}`
+    signInWithPhoneNumber(firebaseAuth, pn, appVerifier)
       .then(confirmResult => {
         setConfirmPhone(confirmResult);
         setModal(true);
@@ -185,7 +172,7 @@ export default function ContactForm() {
               <div className="space-y-10 mt-16">
                 <input
                   type="text"
-                  className="w-full border p-4 outline-none appearance-none rounded bg-white text-unicodez-dark text-base py-4 px-7"
+                  className="w-full border p-4 appearance-none rounded bg-white text-unicodez-dark text-base py-4 px-7"
                   placeholder="Enter Your Name"
                   name="from_name"
                   required
@@ -193,11 +180,17 @@ export default function ContactForm() {
                   onChange={formHandler}
                 />
 
+
                 <PhoneInput
-                  className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7 outline-none border-none "
+                  containerClass="st"
                   placeholder="Enter phone number"
+                  className="w-full border appearance-none rounded bg-white text-unicodez-dark text-base py-3 px-6"
                   name="from_name"
+                  country={"us"}
                   onChange={setphoneNumber} />
+
+
+
                 <input
                   type="email"
                   className="w-full rounded bg-white text-unicodez-dark text-base py-4 px-7"
@@ -215,13 +208,8 @@ export default function ContactForm() {
                   required
                   onChange={formHandler}
                 />
-                {/* <Reaptcha
-                  sitekey={REACT_APP_SITE_KEY}
-                  ref={captchaRef}
-                  onVerify={verify}
-                ></Reaptcha> */}
+
                 <div className="mb-10">
-                  {/* disabled={recaptchaReady} */}
                   {(inProgress) ? <Circles
                     height="40"
                     width="40"

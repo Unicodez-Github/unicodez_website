@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/globals.scss";
 import { useEffect } from "react";
-
+import './globalStyle.css'
 const progress = new ProgressBar({
   size: 4,
   color: "#02273D",

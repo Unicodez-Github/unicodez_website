@@ -33,7 +33,7 @@ const ContactHero = () => {
               <div className="mt-5 max-w-md text-base font-medium text-unicodez-dark sm:text-lg md:mt-5 md:text-xl md:max-w-lg leading-8 sm:md:leading-10">
                 <ul className="space-y-2">
                   <li>
-                    <a href="tel:+1 254 677 8119" className="inline-flex items-center space-x-6 text-base text-unicodez-dark hover:text-unicodez-blue">
+                    <a href="tel:+1 3022950786" className="inline-flex items-center space-x-6 text-base text-unicodez-dark hover:text-unicodez-blue">
                       <svg
                         width="44"
                         height="44"
@@ -51,7 +51,7 @@ const ContactHero = () => {
                           fill="currentColor"
                         />
                       </svg>
-                      <span>+1 - 254 677 8119 </span>
+                      <span>+1 - 3022950786 </span>
                     </a>
                   </li>
                   <li>

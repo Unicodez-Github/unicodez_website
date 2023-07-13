@@ -21,16 +21,16 @@ const team = [
     linkedin: "#",
     picture: "/images/team/anmolf.png",
   },
-  {
-    id: 2,
-    name: "Saurav Yadav",
-    role: "CTO & Co-Founder",
-    quote:
-      "Saurav Yadav earned a Bachelor’s in Information technology and a Master’s in IT & Marketing. The tech-savvy professional is also the co-founder of Unicodez.",
-    email: "info@unicodez.com",
-    linkedin: "#",
-    picture: "/images/team/suarav-unicodez.png",
-  },
+  // {
+  //   id: 2,
+  //   name: "Saurav Yadav",
+  //   role: "CTO & Co-Founder",
+  //   quote:
+  //     "Saurav Yadav earned a Bachelor’s in Information technology and a Master’s in IT & Marketing. The tech-savvy professional is also the co-founder of Unicodez.",
+  //   email: "info@unicodez.com",
+  //   linkedin: "#",
+  //   picture: "/images/team/suarav-unicodez.png",
+  // },
   {
     id: 3,
     name: "Tom Wood, Jr.",

@@ -367,7 +367,7 @@ const Navbar = () => {
               <button className="button primary normal">Contact Us</button>
             </Link>
             <a
-              href="https://unistack.herokuapp.com/"
+              href="https://www.unistack.in/"
               target="_blank"
               rel="noreferrer noopener"
             >

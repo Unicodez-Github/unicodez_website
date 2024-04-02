@@ -252,7 +252,7 @@ export default function ContactForm() {
                 <span>(9 am to 7 pm EST)</span>
               </div>
             </div>
-            <div className="mt-10">
+            {/* <div className="mt-10">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.7557670560195!2d-75.5533080843079!3d39.74513670413234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6fd6a9dfc32a9%3A0xab073c5880e220d7!2s831%20N%20Tatnall%20St%2C%20Wilmington%2C%20DE%2019801%2C%20USA!5e0!3m2!1sen!2sng!4v1660511553349!5m2!1sen!2sng"
                 width="100%"
@@ -263,7 +263,7 @@ export default function ContactForm() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="rounded-[20px]"
               />
-            </div>
+            </div> */}
             <div className="grid grid-cols-2 mt-10">
               <div>
                 <h4 className="text-unicodez-dark font-bold text-lg uppercase">

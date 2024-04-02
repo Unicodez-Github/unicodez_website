@@ -53,8 +53,7 @@ const Footer = () => {
                     height={28}
                     width={28}
                   />{" "}
-                  <span>1000 North West Street, #1281-252</span>
-                  <span>Wilmington , DE – 19801 USA</span>
+                  <span>1000 North West Street, #1281-252, Wilmington , DE – 19801 USA</span>
                 </li>
                 <li className="flex items-start space-x-2.5">
                   <Image

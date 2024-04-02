@@ -44,7 +44,7 @@ export default function UniqueSolutions() {
               </p>
               <div className="inline-flex mt-10">
                 <a
-                  href="https://unistack.herokuapp.com/"
+                  href="https://www.unistack.in/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >

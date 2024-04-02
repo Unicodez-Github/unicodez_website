@@ -260,8 +260,9 @@ export default function ContactForm() {
                 </h4>
                 <div className="space-y-2.5 text-unicodez-dark text-lg mt-5">
                   <p>USA</p>
-                  <p>1000 North West Street,1281-252 Wilmington,</p>
-                  <p>DE 19801 USA</p>
+                  <p>1000 North West Street,</p>
+                  <p>1281-252,</p>
+                  <p>Wilmington,DE 19801 USA</p>
                 </div>
               </div>
               <div>

@@ -296,8 +296,6 @@ export default function Terms() {
             </div>
 
             <div className="mt-5 text-unicodez-text text-sm leading-[40px] container">
-                <h1><b>Changes To Our Privacy Policy
-                </b></h1>
                 <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
                     To ask questions or comment about this privacy policy and our privacy practices, contact via our Contact Us link.
                 </p>

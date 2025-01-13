@@ -250,6 +250,43 @@ export default function Terms() {
 
                 </p>
             </div>
+
+            <div className="mt-5 text-unicodez-text text-sm leading-[40px] container">
+                <h1><b>Refund and Cancellation Policy</b></h1>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    At MeetChess (Product owned by Unicodez), we strive to provide uninterrupted and high-quality online chess coaching services to our valued clients. Please review our Refund and Cancellation Policy carefully before subscribing to our platform.
+                </p>
+            
+                <h2 className="mt-5"><b>1. Refund Policy</b></h2>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    Refunds are not available once a subscription has been purchased.
+                </p>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    If there is a downtime or service unavailability exceeding seven (7) consecutive days due to technical issues attributable to MeetChess, a prorated refund for the affected period may be issued. This will be assessed and processed at the sole discretion of MeetChess.
+                </p>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    Downtime caused by factors outside MeetChess's control, such as internet issues on the client’s end or third-party disruptions, does not qualify for a refund.
+                </p>
+            
+                <h2 className="mt-5"><b>2. Cancellation Policy</b></h2>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    Clients may cancel their subscription at any time through their account settings. However, no refunds will be issued for the unused portion of the subscription term.
+                </p>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    Cancellation will prevent future billing, but the subscription will remain active until the end of the current billing cycle.
+                </p>
+            
+                <h2 className="mt-5"><b>3. Terms and Conditions</b></h2>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    By purchasing a subscription, clients agree to this Refund and Cancellation Policy.
+                </p>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    MeetChess reserves the right to modify this policy at any time, and changes will be effective immediately upon posting on our website. Clients are encouraged to review the policy periodically.
+                </p>
+                <p className="mt-5 text-unicodez-text text-sm leading-[40px]">
+                    For further assistance or inquiries regarding this policy, please contact our support team at support@meetchess.com.
+                </p>
+            </div>
             <div className="mt-5 text-unicodez-text text-sm leading-[40px] container">
                 <h1><b>Changes To Our Privacy Policy
                 </b></h1>

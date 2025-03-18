@@ -22,10 +22,28 @@ export default function Document() {
           `,
           }}
         />
+          
       </Head>
       <body>
         <Main />
         <NextScript />
+        <script type="text/javascript">
+          _linkedin_partner_id = "8183465";
+          window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+          window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+          </script><script type="text/javascript">
+          (function(l) {
+          if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+          window.lintrk.q=[]}
+          var s = document.getElementsByTagName("script")[0];
+          var b = document.createElement("script");
+          b.type = "text/javascript";b.async = true;
+          b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+          s.parentNode.insertBefore(b, s);})(window.lintrk);
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8183465&fmt=gif" />
+        </noscript>
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7XS96X" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,

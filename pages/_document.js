@@ -27,12 +27,13 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <script type="text/javascript">
-          var _linkedin_partner_id = "8183465";
+
+        <Script type="text/javascript">
+          _linkedin_partner_id = "8188465";
           window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
           window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-        </script>
-        <script type="text/javascript">
+        </Script>
+        <Script type="text/javascript">
           (function(l) {
           if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
           window.lintrk.q=[]}
@@ -41,9 +42,9 @@ export default function Document() {
           b.type = "text/javascript";b.async = true;
           b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
           s.parentNode.insertBefore(b, s);})(window.lintrk);
-        </script>
+        </Script>
         <noscript>
-            <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8183465&fmt=gif" />
+          <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8188465&fmt=gif" />
         </noscript>
         <noscript
           dangerouslySetInnerHTML={{

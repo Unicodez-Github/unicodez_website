@@ -22,18 +22,12 @@ export default function Document() {
           `,
           }}
         />
-          
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-
-        <Script type="text/javascript">
+        <Script>
           _linkedin_partner_id = "8188465";
           window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
           window._linkedin_data_partner_ids.push(_linkedin_partner_id);
         </Script>
-        <Script type="text/javascript">
+        <Script>
           (function(l) {
           if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
           window.lintrk.q=[]}
@@ -43,6 +37,10 @@ export default function Document() {
           b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
           s.parentNode.insertBefore(b, s);})(window.lintrk);
         </Script>
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
         <noscript>
           <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8188465&fmt=gif" />
         </noscript>

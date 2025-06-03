@@ -4,7 +4,7 @@ export default function CallToAction() {
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-10">
         <div className="text-center lg:text-left max-w-xl">
           <h2 className="text-5xl font-bold mb-4 text-unicodez-dark">
-            Let's Talk Enterprise Solutions
+            Let&apos;s Talk Enterprise Solutions
           </h2>
           <p className="text-xl opacity-80 mb-6 text-unicodez-text">
             Start a conversation with our team today and explore what we can do together.

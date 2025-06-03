@@ -101,14 +101,14 @@ export default function LatestArticles() {
                   >
                     <div className="w-full flex justify-between items-center">
                       <span
-                        className={`text-4xl text-unicodez-dark font-bold ${
+                        className={`text-4xl font-bold ${
                           (id === 1 || id === 4) ? "text-white" : "text-unicodez-dark"
                         }`}
                       >
                         0{id + 1}
                       </span>
                       <div
-                        className={`flex items-center text-unicodez-dark hover:text-opacity-90 cursor-pointer ${
+                        className={`flex items-center hover:text-opacity-90 cursor-pointer ${
                           (id === 1 || id === 4)? "text-white" : "text-unicodez-dark"
                         }`}
                       >

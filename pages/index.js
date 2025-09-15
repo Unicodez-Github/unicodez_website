@@ -8,6 +8,7 @@ import LatestArticles from "../components/homepage/latest-articles";
 import OneStopSolution from "../components/homepage/one-stop-solution";
 import UniqueSolutions from "../components/homepage/unique-solutions";
 import YouHaveTheJob from "../components/homepage/you-have-the-job";
+import CallToAction from "../components/homepage/callToAction";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
       <HomeHero />
       <OneStopSolution />
+      <CallToAction />
       <Founded />
       <HowWeGetItDone />
       <UniqueSolutions />

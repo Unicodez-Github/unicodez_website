@@ -32,7 +32,7 @@ export default function UniqueSolutions() {
           </div>
           <div className="w-full flex lg:justify-end">
             <div className="w-auto lg:mr-10 2xl:mr-0 lg:w-1/3"></div>
-            <div className="flex-1 flex flex-col lg:px-10">
+            <div className="flex-1 flex flex-col lg:px-10 z-10 lg:backdrop-blur-md">
               <h2 className="section-title text-white">
                 <span className="block">We Create Unique </span>{" "}
                 <span className="block mt-3 lg:mt-4">Solutions for Businesses</span>

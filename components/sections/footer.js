@@ -43,8 +43,10 @@ const Footer = () => {
                 Address
               </h4>
               <ul className="flex flex-col text-unicodez-text space-y-4 mt-3 font-medium">
-                <li><a href="tel:+1(302)-295-0786" className="cursor-pointer">+1 – 3022950786 </a></li>
-                <li><a href="tel:+918770078276" className="cursor-pointer">+91 – 8770078276</a></li>
+                <li className="flex space-x-2"> <img src="https://s.w.org/images/core/emoji/13.0.1/svg/1f1fa-1f1f8.svg" height={20}
+                    width={20} /> <a href="tel:+1(302)-295-0786" className="cursor-pointer">+1 – 3022950786 </a></li>
+                <li className="flex space-x-2"> <img src="https://s.w.org/images/core/emoji/13.0.1/svg/1f1fa-1f1f8.svg" height={20}
+                    width={20} /> <a href="tel:+1(856)-226-4858" className="cursor-pointer">+1 – 8562264858  </a></li>
                 <li><a href="mailto:info@unicodez.com" className="cursor-pointer">info@unicodez.com</a></li>
                 <li className="flex items-start space-x-2.5">
                   <Image
